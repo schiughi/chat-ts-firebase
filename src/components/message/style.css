@@ -1,0 +1,24 @@
+.message {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+}
+
+.icon {
+  border-radius: 50%;
+  max-width: 100px;
+  max-height: 100px;
+}
+
+.box {
+  border: solid gray;
+  border-radius: 5%;
+}
+
+.name {
+  color: gray;
+}
+
+.text {
+  color: black;
+}
