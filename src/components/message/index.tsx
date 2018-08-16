@@ -1,7 +1,7 @@
 import * as React from "react"
 import * as styles from "./style.css"
 
-interface MessageProps {
+export interface MessageProps {
   userIcon: string
   userName: string
   text?: string

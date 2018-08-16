@@ -1,5 +1,6 @@
 import * as React from "react"
 import { Button, Input, InputEvent, TextArea } from "src/components/atoms"
+import * as style from "./style.css"
 
 interface MessageFormProps {
   onChange: (e: InputEvent) => void
@@ -8,7 +9,7 @@ interface MessageFormProps {
 
 export const MessageForm: React.SFC<MessageFormProps> = props => {
   return (
-    <div className="MessageForm">
+    <div className={style.container}>
       <div className="">
         <Input name="userName" onChange={props.onChange} placeHolder="名前" />
         <Input
