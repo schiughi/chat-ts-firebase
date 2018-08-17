@@ -20,6 +20,7 @@ export class Chat extends React.Component<ChatProps, ChatState> {
     super(props)
     this.state = {
       messages: [],
+      userIcon: "",
     }
   }
   public componentWillMount() {
@@ -67,7 +68,7 @@ export class Chat extends React.Component<ChatProps, ChatState> {
   }
 
   private handleSubmit = (event: InputEvent) => {
-    if (!this.state.userName || !this.state.userIcon || !this.state.text) {
+    if (!this.state.userName || !this.state.text) {
       return
     }
     messagesRef.push({
