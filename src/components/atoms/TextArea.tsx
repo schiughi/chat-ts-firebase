@@ -4,7 +4,7 @@ interface TextAreaProps {
   id?: string
   name: string
   value?: string
-  placeHolder?: string
+  placeholder?: string
   onChange: (event: InputEvent) => void
 }
 

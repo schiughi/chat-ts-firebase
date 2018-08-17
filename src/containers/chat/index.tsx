@@ -13,7 +13,33 @@ interface ChatState {
   text?: string
   messages: MessageProps[]
 }
-export default class Chat extends React.Component<ChatProps, ChatState> {
+
+export class Chat extends React.Component<ChatProps, ChatState> {
+  constructor(props: ChatProps) {
+    super(props)
+    this.state = {
+      messages: [],
+    }
+  }
+  public componentWillMount() {
+    messagesRef.on("child_added", snapshot => {
+      if (!snapshot) {
+        return
+      }
+      const m = snapshot.val()
+      const msgs = this.state.messages
+
+      msgs.push({
+        text: m.text,
+        userIcon: m.userIcon,
+        userName: m.userName,
+      })
+
+      this.setState({
+        messages: msgs,
+      })
+    })
+  }
   public render() {
     const messageList = this.state.messages.map((m, i) => (
       <Message key={i} {...m} />

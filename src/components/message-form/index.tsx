@@ -11,11 +11,11 @@ export const MessageForm: React.SFC<MessageFormProps> = props => {
   return (
     <div className={style.container}>
       <div className="">
-        <Input name="userName" onChange={props.onChange} placeHolder="名前" />
+        <Input name="userName" onChange={props.onChange} placeholder="名前" />
         <Input
           name="userIcon"
           onChange={props.onChange}
-          placeHolder="プロフィール画像URL"
+          placeholder="プロフィール画像URL"
         />
       </div>
 
