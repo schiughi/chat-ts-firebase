@@ -1,4 +1,5 @@
 import * as React from "react"
+import * as style from "./style.css"
 
 interface InputProps {
   id?: string
@@ -13,5 +14,5 @@ interface InputEvent extends React.FormEvent<HTMLInputElement> {
 }
 
 export const Input: React.SFC<InputProps> = props => (
-  <input type="text" {...props} />
+  <input type="text" className={style.input} {...props} />
 )

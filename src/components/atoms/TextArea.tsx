@@ -1,4 +1,5 @@
 import * as React from "react"
+import * as style from "./style.css"
 
 interface TextAreaProps {
   id?: string
@@ -13,5 +14,5 @@ interface InputEvent extends React.FormEvent<HTMLTextAreaElement> {
 }
 
 export const TextArea: React.SFC<TextAreaProps> = props => (
-  <textarea {...props} />
+  <textarea className={style.textarea} {...props} />
 )

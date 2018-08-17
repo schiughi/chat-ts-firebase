@@ -3,6 +3,7 @@ import { InputEvent } from "src/components/atoms"
 import { Message, MessageProps } from "src/components/message"
 import { MessageForm } from "src/components/message-form"
 import { firebaseDb } from "src/firebase"
+import * as style from "./style.css"
 
 const messagesRef = firebaseDb.ref("messages")
 
@@ -42,7 +43,9 @@ export class Chat extends React.Component<ChatProps, ChatState> {
   }
   public render() {
     const messageList = this.state.messages.map((m, i) => (
-      <Message key={i} {...m} />
+      <div className={style.wrapper}>
+        <Message key={i} {...m} />
+      </div>
     ))
     return (
       <div>

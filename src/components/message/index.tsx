@@ -9,7 +9,12 @@ export interface MessageProps {
 
 export const Message: React.SFC<MessageProps> = props => (
   <div className={styles.message}>
-    <img className={styles.icon} src={props.userIcon} />
+    <div className={styles.iconWrapper}>
+      <div
+        className={styles.icon}
+        style={{ backgroundImage: `url('${props.userIcon}')` }}
+      />
+    </div>
     <div className={styles.box}>
       <p className={styles.name}>@{props.userName}</p>
       <p className={styles.text}>{props.text}</p>

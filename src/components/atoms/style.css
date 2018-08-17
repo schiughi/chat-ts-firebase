@@ -1,0 +1,10 @@
+.textarea {
+  resize: none;
+  overflow: auto;
+}
+
+.input:focus,
+.textarea:focus {
+  border-color: #85b7d9;
+  box-shadow: none;
+}
