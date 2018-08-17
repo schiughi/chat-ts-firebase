@@ -78,5 +78,10 @@ export class Chat extends React.Component<ChatProps, ChatState> {
       userIcon: this.state.userIcon,
       userName: this.state.userName,
     })
+
+    this.setState({
+      ...this.state,
+      text: "",
+    })
   }
 }
