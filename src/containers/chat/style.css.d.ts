@@ -1,1 +1,2 @@
-export const wrapper: string
+export const message: string
+export const list: string

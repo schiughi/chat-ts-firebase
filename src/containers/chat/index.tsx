@@ -43,14 +43,14 @@ export class Chat extends React.Component<ChatProps, ChatState> {
   }
   public render() {
     const messageList = this.state.messages.map((m, i) => (
-      <div className={style.wrapper}>
+      <div className={style.message}>
         <Message key={i} {...m} />
       </div>
     ))
     return (
       <div>
         <h2>Chat</h2>
-        <div className="MessageList">{messageList}</div>
+        <div className={style.list}>{messageList}</div>
         <MessageForm
           onChange={this.handleChange}
           onSubmit={this.handleSubmit}
@@ -67,11 +67,7 @@ export class Chat extends React.Component<ChatProps, ChatState> {
   }
 
   private handleSubmit = (event: InputEvent) => {
-    if (
-      this.state.userName === "" ||
-      this.state.userIcon === "" ||
-      this.state.text === ""
-    ) {
+    if (!this.state.userName || !this.state.userIcon || !this.state.text) {
       return
     }
     messagesRef.push({
