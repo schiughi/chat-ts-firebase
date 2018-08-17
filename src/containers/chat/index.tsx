@@ -52,10 +52,12 @@ export class Chat extends React.Component<ChatProps, ChatState> {
       <div>
         <h2>Chat</h2>
         <div className={style.list}>{messageList}</div>
-        <MessageForm
-          onChange={this.handleChange}
-          onSubmit={this.handleSubmit}
-        />
+        <div className={style.form}>
+          <MessageForm
+            onChange={this.handleChange}
+            onSubmit={this.handleSubmit}
+          />
+        </div>
       </div>
     )
   }
