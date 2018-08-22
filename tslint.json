@@ -9,6 +9,7 @@
   },
   "rules": {
     "interface-name": [true, "never-prefix"],
-    "no-empty-interface": false
+    "no-empty-interface": false,
+    "no-console": false
   }
 }

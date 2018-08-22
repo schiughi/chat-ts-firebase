@@ -142,6 +142,7 @@ module.exports = {
           {
             test: /\.(js|jsx|mjs)$/,
             include: paths.appSrc,
+            exclude: path.resolve(__dirname, "./functions"),
             loader: require.resolve("babel-loader"),
             options: {
               compact: true,
@@ -152,6 +153,7 @@ module.exports = {
           {
             test: /\.(ts|tsx)$/,
             include: paths.appSrc,
+            exclude: path.resolve(__dirname, "./functions"),
             use: [
               {
                 loader: require.resolve("ts-loader"),

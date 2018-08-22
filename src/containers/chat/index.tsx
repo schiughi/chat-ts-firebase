@@ -2,10 +2,11 @@ import * as React from "react"
 import { InputEvent } from "src/components/atoms"
 import { Message, MessageProps } from "src/components/message"
 import { MessageForm } from "src/components/message-form"
-import { firebaseDb } from "src/firebase"
+import { firebaseDb, firebaseFunctions } from "src/firebase"
 import * as style from "./style.css"
 
 const messagesRef = firebaseDb.ref("messages")
+const reTranslate = firebaseFunctions.httpsCallable("reTranslate")
 
 interface ChatProps {}
 interface ChatState {
@@ -73,6 +74,11 @@ export class Chat extends React.Component<ChatProps, ChatState> {
     if (!this.state.userName || !this.state.text) {
       return
     }
+    reTranslate({ text: this.state.text, locale: "en", language: "ru" }).then(
+      result => {
+        console.log(result.data.text)
+      }
+    )
     messagesRef.push({
       text: this.state.text,
       userIcon: this.state.userIcon,
